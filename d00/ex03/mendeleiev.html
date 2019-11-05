@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+</head>
+<style>
+
+	img {
+		width: 33%;
+		margin-left: 19vw;
+	}
+
+	.atom {
+		background-color: #ffc0c0;
+		border: 1px solid black;
+		padding: 5px;
+
+		font-size:1vw;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.atom_weight {
+		order: 1;
+		height: 33%;
+		text-align: left;
+	}
+
+	.atom_text {
+		order: 2;
+		height: 33%;
+		text-align: center;
+		font-weight: bold;
+	}
+
+	.atom_number {
+		order: 3;
+		height: 33%;
+		text-align: right;
+	}
+
+	.page {
+		display: grid;
+		column-gap: .1vw;
+		row-gap: .1vw;
+		grid-template-columns: repeat(18, 5vw);
+		grid-template-rows: repeat(10, 5vw);
+	}
+
+	.h,
+	.c,
+	.n,
+	.o,
+	.f,
+	.p,
+	.s,
+	.cl,
+	.se,
+	.br,
+	.i {
+		background-color: #f0ff8f;
+	}
+
+	.li,
+	.na,
+	.k,
+	.rb,
+	.cs,
+	.fr {
+		background-color: #ff6666;
+	}
+
+	.be,
+	.mg,
+	.ca,
+	.sr,
+	.ba,
+	.ra {
+		background-color: #ffdead;
+	}
+
+	.la,
+	.ce,
+	.pr,
+	.nd,
+	.pm,
+	.sm,
+	.eu,
+	.gd,
+	.tb,
+	.dy,
+	.ho,
+	.er,
+	.tm,
+	.yb,
+	.lu {
+		background-color: #ffbfff;
+	}
+
+	.ac,
+	.th,
+	.pa,
+	.u,
+	.np,
+	.pu,
+	.am,
+	.cm,
+	.bk,
+	.cf,
+	.es,
+	.fm,
+	.md,
+	.no,
+	.lr {
+		background-color: #ff99cc;
+	}
+
+	.he,
+	.ne,
+	.ar,
+	.kr,
+	.xe,
+	.rn {
+		background-color: #c0ffff;
+	}
+
+	.al,
+	.zn,
+	.ga,
+	.cd,
+	.in,
+	.sn,
+	.hg,
+	.tl,
+	.pb,
+	.bi,
+	.po,
+	.cn {
+		background-color: #cccccc;
+	}
+
+	.mt,
+	.ds,
+	.rg,
+	.nh,
+	.fl,
+	.mc,
+	.lv,
+	.ts,
+	.og {
+		background-color: #e8e8e8;
+	}
+
+	.b,
+	.si,
+	.ge,
+	.as,
+	.sb,
+	.te,
+	.at {
+		background-color: #cccc99;
+	}
+
+	.h{grid-column:1; grid-row:1;}
+	.he{grid-column:18; grid-row:1;}
+
+	.li{grid-column:1; grid-row:2;}
+	.be{grid-column:2; grid-row:2;}
+	.b{grid-column:13; grid-row:2;}
+	.c{grid-column:14; grid-row:2;}
+	.n{grid-column:15; grid-row:2;}
+	.o{grid-column:16; grid-row:2;}
+	.f{grid-column:17; grid-row:2;}
+	.ne{grid-column:18; grid-row:2;}
+
+	.na{grid-column:1; grid-row:3;}
+	.mg{grid-column:2; grid-row:3;}
+	.al{grid-column:13; grid-row:3;}
+	.si{grid-column:14; grid-row:3;}
+	.p{grid-column:15; grid-row:3;}
+	.s{grid-column:16; grid-row:3;}
+	.cl{grid-column:17; grid-row:3;}
+	.ar{grid-column:18; grid-row:3;}
+
+	.k{grid-column:1; grid-row:4;}
+	.ca{grid-column:2; grid-row:4;}
+	.sc{grid-column:3; grid-row:4;}
+	.ti{grid-column:4; grid-row:4;}
+	.v{grid-column:5; grid-row:4;}
+	.cr{grid-column:6; grid-row:4;}
+	.mn{grid-column:7; grid-row:4;}
+	.fe{grid-column:8; grid-row:4;}
+	.co{grid-column:9; grid-row:4;}
+	.ni{grid-column:10; grid-row:4;}
+	.cu{grid-column:11; grid-row:4;}
+	.zn{grid-column:12; grid-row:4;}
+	.ga{grid-column:13; grid-row:4;}
+	.ge{grid-column:14; grid-row:4;}
+	.as{grid-column:15; grid-row:4;}
+	.se{grid-column:16; grid-row:4;}
+	.br{grid-column:17; grid-row:4;}
+	.kr{grid-column:18; grid-row:4;}
+
+	.rb{grid-column:1; grid-row:5;}
+	.sr{grid-column:2; grid-row:5;}
+	.y{grid-column:3; grid-row:5;}
+	.zr{grid-column:4; grid-row:5;}
+	.nb{grid-column:5; grid-row:5;}
+	.mo{grid-column:6; grid-row:5;}
+	.tc{grid-column:7; grid-row:5;}
+	.ru{grid-column:8; grid-row:5;}
+	.rh{grid-column:9; grid-row:5;}
+	.pd{grid-column:10; grid-row:5;}
+	.ag{grid-column:11; grid-row:5;}
+	.cd{grid-column:12; grid-row:5;}
+	.in{grid-column:13; grid-row:5;}
+	.sn{grid-column:14; grid-row:5;}
+	.sb{grid-column:15; grid-row:5;}
+	.te{grid-column:16; grid-row:5;}
+	.i{grid-column:17; grid-row:5;}
+	.xe{grid-column:18; grid-row:5;}
+
+	.cs{grid-column:1; grid-row:6;}
+	.ba{grid-column:2; grid-row:6;}
+	.la{grid-column:2; grid-row:6;}
+	.ce{grid-column:3; grid-row:6;}
+	.pr{grid-column:4; grid-row:6;}
+	.nd{grid-column:5; grid-row:6;}
+	.pm{grid-column:6; grid-row:6;}
+	.sm{grid-column:7; grid-row:6;}
+	.eu{grid-column:8; grid-row:6;}
+	.gd{grid-column:9; grid-row:6;}
+	.tb{grid-column:10; grid-row:6;}
+	.dy{grid-column:11; grid-row:6;}
+	.ho{grid-column:12; grid-row:6;}
+	.er{grid-column:13; grid-row:6;}
+	.tm{grid-column:14; grid-row:6;}
+	.yb{grid-column:15; grid-row:6;}
+	.lu{grid-column:16; grid-row:6;}
+	.la{grid-column:3; grid-row:6;}
+	.hf{grid-column:4; grid-row:6;}
+	.ta{grid-column:5; grid-row:6;}
+	.w{grid-column:6; grid-row:6;}
+	.re{grid-column:7; grid-row:6;}
+	.os{grid-column:8; grid-row:6;}
+	.ir{grid-column:9; grid-row:6;}
+	.pt{grid-column:10; grid-row:6;}
+	.au{grid-column:11; grid-row:6;}
+	.hg{grid-column:12; grid-row:6;}
+	.tl{grid-column:13; grid-row:6;}
+	.pb{grid-column:14; grid-row:6;}
+	.bi{grid-column:15; grid-row:6;}
+	.po{grid-column:16; grid-row:6;}
+	.at{grid-column:17; grid-row:6;}
+	.rn{grid-column:18; grid-row:6;}
+
+	.fr{grid-column:1; grid-row:7;}
+	.ra{grid-column:2; grid-row:7;}
+	.ac{grid-column:2; grid-row:7;}
+	.th{grid-column:3; grid-row:7;}
+	.pa{grid-column:4; grid-row:7;}
+	.u{grid-column:5; grid-row:7;}
+	.np{grid-column:6; grid-row:7;}
+	.pu{grid-column:7; grid-row:7;}
+	.am{grid-column:8; grid-row:7;}
+	.cm{grid-column:9; grid-row:7;}
+	.bk{grid-column:10; grid-row:7;}
+	.cf{grid-column:11; grid-row:7;}
+	.es{grid-column:12; grid-row:7;}
+	.fm{grid-column:13; grid-row:7;}
+	.md{grid-column:14; grid-row:7;}
+	.no{grid-column:15; grid-row:7;}
+	.lr{grid-column:16; grid-row:7;}
+	.rf{grid-column:4; grid-row:7;}
+	.ac{grid-column:3; grid-row:7;}
+	.db{grid-column:5; grid-row:7;}
+	.sg{grid-column:6; grid-row:7;}
+	.bh{grid-column:7; grid-row:7;}
+	.hs{grid-column:8; grid-row:7;}
+	.mt{grid-column:9; grid-row:7;}
+	.ds{grid-column:10; grid-row:7;}
+	.rg{grid-column:11; grid-row:7;}
+	.cn{grid-column:12; grid-row:7;}
+	.nh{grid-column:13; grid-row:7;}
+	.fl{grid-column:14; grid-row:7;}
+	.mc{grid-column:15; grid-row:7;}
+	.lv{grid-column:16; grid-row:7;}
+	.ts{grid-column:17; grid-row:7;}
+	.og{grid-column:18; grid-row:7;}
+
+	.ce{grid-column:4; grid-row:8;}
+	.pr{grid-column:5; grid-row:8;}
+	.nd{grid-column:6; grid-row:8;}
+	.pm{grid-column:7; grid-row:8;}
+	.sm{grid-column:8; grid-row:8;}
+	.eu{grid-column:9; grid-row:8;}
+	.gd{grid-column:10; grid-row:8;}
+	.tb{grid-column:11; grid-row:8;}
+	.dy{grid-column:12; grid-row:8;}
+	.ho{grid-column:13; grid-row:8;}
+	.er{grid-column:14; grid-row:8;}
+	.tm{grid-column:15; grid-row:8;}
+	.yb{grid-column:16; grid-row:8;}
+	.lu{grid-column:17; grid-row:8;}
+
+	.th{grid-column:4; grid-row:9;}
+	.pa{grid-column:5; grid-row:9;}
+	.u{grid-column:6; grid-row:9;}
+	.np{grid-column:7; grid-row:9;}
+	.pu{grid-column:8; grid-row:9;}
+	.am{grid-column:9; grid-row:9;}
+	.cm{grid-column:10; grid-row:9;}
+	.bk{grid-column:11; grid-row:9;}
+	.cf{grid-column:12; grid-row:9;}
+	.es{grid-column:13; grid-row:9;}
+	.fm{grid-column:14; grid-row:9;}
+	.md{grid-column:15; grid-row:9;}
+	.no{grid-column:16; grid-row:9;}
+	.lr{grid-column:17; grid-row:9;}
+
+</style>
+
+<body>
+	<div class="title">
+		<img src="https://raw.githubusercontent.com/nipqiv/resource_school_web_projects/master/stackoverflow.png"/>
+	</div>
+	<div class="page" contenteditable="true">
+
+		<div class="atom h">
+			<span class="atom_text">H</span>
+			<span class="atom_number">1</span>
+			<span class="atom_weight">1.008</span>
+		</div>
+
+		<div class="atom he">
+			<span class="atom_text">He</span>
+			<span class="atom_number">2</span>
+			<span class="atom_weight">4.0026</span>
+		</div>
+
+		<div class="atom li">
+			<span class="atom_text">Li</span>
+			<span class="atom_number">3</span>
+			<span class="atom_weight">6.94</span>
+		</div>
+
+		<div class="atom be">
+			<span class="atom_text">Be</span>
+			<span class="atom_number">4</span>
+			<span class="atom_weight">9.0122</span>
+		</div>
+
+		<div class="atom b">
+			<span class="atom_text">B</span>
+			<span class="atom_number">5</span>
+			<span class="atom_weight">10.81</span>
+		</div>
+
+		<div class="atom c">
+			<span class="atom_text">C</span>
+			<span class="atom_number">6</span>
+			<span class="atom_weight">12.011</span>
+		</div>
+
+		<div class="atom n">
+			<span class="atom_text">N</span>
+			<span class="atom_number">7</span>
+			<span class="atom_weight">14.007</span>
+		</div>
+
+		<div class="atom o">
+			<span class="atom_text">O</span>
+			<span class="atom_number">8</span>
+			<span class="atom_weight">15.999</span>
+		</div>
+
+		<div class="atom f">
+			<span class="atom_text">F</span>
+			<span class="atom_number">9</span>
+			<span class="atom_weight">18.998</span>
+		</div>
+
+		<div class="atom ne">
+			<span class="atom_text">Ne</span>
+			<span class="atom_number">10</span>
+			<span class="atom_weight">20.180</span>
+		</div>
+
+		<div class="atom na">
+			<span class="atom_text">Na</span>
+			<span class="atom_number">11</span>
+			<span class="atom_weight">22.990</span>
+		</div>
+
+		<div class="atom mg">
+			<span class="atom_text">Mg</span>
+			<span class="atom_number">12</span>
+			<span class="atom_weight">24.305</span>
+		</div>
+
+		<div class="atom al">
+			<span class="atom_text">Al</span>
+			<span class="atom_number">13</span>
+			<span class="atom_weight">26.982</span>
+		</div>
+
+		<div class="atom si">
+			<span class="atom_text">Si</span>
+			<span class="atom_number">14</span>
+			<span class="atom_weight">28.085</span>
+		</div>
+
+		<div class="atom p">
+			<span class="atom_text">P</span>
+			<span class="atom_number">15</span>
+			<span class="atom_weight">30.974</span>
+		</div>
+
+		<div class="atom s">
+			<span class="atom_text">S</span>
+			<span class="atom_number">16</span>
+			<span class="atom_weight">32.06</span>
+		</div>
+
+		<div class="atom cl">
+			<span class="atom_text">Cl</span>
+			<span class="atom_number">17</span>
+			<span class="atom_weight">35.45</span>
+		</div>
+
+		<div class="atom ar">
+			<span class="atom_text">Ar</span>
+			<span class="atom_number">18</span>
+			<span class="atom_weight">39.948</span>
+		</div>
+
+		<div class="atom k">
+			<span class="atom_text">K</span>
+			<span class="atom_number">19</span>
+			<span class="atom_weight">39.098</span>
+		</div>
+
+		<div class="atom ca">
+			<span class="atom_text">Ca</span>
+			<span class="atom_number">20</span>
+			<span class="atom_weight">40.078</span>
+		</div>
+
+		<div class="atom sc">
+			<span class="atom_text">Sc</span>
+			<span class="atom_number">21</span>
+			<span class="atom_weight">44.956</span>
+		</div>
+
+		<div class="atom ti">
+			<span class="atom_text">Ti</span>
+			<span class="atom_number">22</span>
+			<span class="atom_weight">47.867</span>
+		</div>
+
+		<div class="atom v">
+			<span class="atom_text">V</span>
+			<span class="atom_number">23</span>
+			<span class="atom_weight">50.942</span>
+		</div>
+
+		<div class="atom cr">
+			<span class="atom_text">Cr</span>
+			<span class="atom_number">24</span>
+			<span class="atom_weight">51.996</span>
+		</div>
+
+		<div class="atom mn">
+			<span class="atom_text">Mn</span>
+			<span class="atom_number">25</span>
+			<span class="atom_weight">54.938</span>
+		</div>
+
+		<div class="atom fe">
+			<span class="atom_text">Fe</span>
+			<span class="atom_number">26</span>
+			<span class="atom_weight">55.845</span>
+		</div>
+
+		<div class="atom co">
+			<span class="atom_text">Co</span>
+			<span class="atom_number">27</span>
+			<span class="atom_weight">58.933</span>
+		</div>
+
+		<div class="atom ni">
+			<span class="atom_text">Ni</span>
+			<span class="atom_number">28</span>
+			<span class="atom_weight">58.693</span>
+		</div>
+
+		<div class="atom cu">
+			<span class="atom_text">Cu</span>
+			<span class="atom_number">29</span>
+			<span class="atom_weight">63.546</span>
+		</div>
+
+		<div class="atom zn">
+			<span class="atom_text">Zn</span>
+			<span class="atom_number">30</span>
+			<span class="atom_weight">65.38</span>
+		</div>
+
+		<div class="atom ga">
+			<span class="atom_text">Ga</span>
+			<span class="atom_number">31</span>
+			<span class="atom_weight">69.723</span>
+		</div>
+
+		<div class="atom ge">
+			<span class="atom_text">Ge</span>
+			<span class="atom_number">32</span>
+			<span class="atom_weight">72.630</span>
+		</div>
+
+		<div class="atom as">
+			<span class="atom_text">As</span>
+			<span class="atom_number">33</span>
+			<span class="atom_weight">74.922</span>
+		</div>
+
+		<div class="atom se">
+			<span class="atom_text">Se</span>
+			<span class="atom_number">34</span>
+			<span class="atom_weight">78.971</span>
+		</div>
+
+		<div class="atom br">
+			<span class="atom_text">Br</span>
+			<span class="atom_number">35</span>
+			<span class="atom_weight">79.904</span>
+		</div>
+
+		<div class="atom kr">
+			<span class="atom_text">Kr</span>
+			<span class="atom_number">36</span>
+			<span class="atom_weight">83.798</span>
+		</div>
+
+		<div class="atom rb">
+			<span class="atom_text">Rb</span>
+			<span class="atom_number">37</span>
+			<span class="atom_weight">85.468</span>
+		</div>
+
+		<div class="atom sr">
+			<span class="atom_text">Sr</span>
+			<span class="atom_number">38</span>
+			<span class="atom_weight">87.62</span>
+		</div>
+
+		<div class="atom y">
+			<span class="atom_text">Y</span>
+			<span class="atom_number">39</span>
+			<span class="atom_weight">88.906</span>
+		</div>
+
+		<div class="atom zr">
+			<span class="atom_text">Zr</span>
+			<span class="atom_number">40</span>
+			<span class="atom_weight">91.224</span>
+		</div>
+
+		<div class="atom nb">
+			<span class="atom_text">Nb</span>
+			<span class="atom_number">41</span>
+			<span class="atom_weight">92.906</span>
+		</div>
+
+		<div class="atom mo">
+			<span class="atom_text">Mo</span>
+			<span class="atom_number">42</span>
+			<span class="atom_weight">95.95</span>
+		</div>
+
+		<div class="atom tc">
+			<span class="atom_text">Tc</span>
+			<span class="atom_number">43</span>
+			<span class="atom_weight">[97]</span>
+		</div>
+
+		<div class="atom ru">
+			<span class="atom_text">Ru</span>
+			<span class="atom_number">44</span>
+			<span class="atom_weight">101.07</span>
+		</div>
+
+		<div class="atom rh">
+			<span class="atom_text">Rh</span>
+			<span class="atom_number">45</span>
+			<span class="atom_weight">102.91</span>
+		</div>
+
+		<div class="atom pd">
+			<span class="atom_text">Pd</span>
+			<span class="atom_number">46</span>
+			<span class="atom_weight">106.42</span>
+		</div>
+
+		<div class="atom ag">
+			<span class="atom_text">Ag</span>
+			<span class="atom_number">47</span>
+			<span class="atom_weight">107.87</span>
+		</div>
+
+		<div class="atom cd">
+			<span class="atom_text">Cd</span>
+			<span class="atom_number">48</span>
+			<span class="atom_weight">112.41</span>
+		</div>
+
+		<div class="atom in">
+			<span class="atom_text">In</span>
+			<span class="atom_number">49</span>
+			<span class="atom_weight">114.82</span>
+		</div>
+
+		<div class="atom sn">
+			<span class="atom_text">Sn</span>
+			<span class="atom_number">50</span>
+			<span class="atom_weight">118.71</span>
+		</div>
+
+		<div class="atom sb">
+			<span class="atom_text">Sb</span>
+			<span class="atom_number">51</span>
+			<span class="atom_weight">121.76</span>
+		</div>
+
+		<div class="atom te">
+			<span class="atom_text">Te</span>
+			<span class="atom_number">52</span>
+			<span class="atom_weight">127.60</span>
+		</div>
+
+		<div class="atom i">
+			<span class="atom_text">I</span>
+			<span class="atom_number">53</span>
+			<span class="atom_weight">126.90</span>
+		</div>
+
+		<div class="atom xe">
+			<span class="atom_text">Xe</span>
+			<span class="atom_number">54</span>
+			<span class="atom_weight">131.29</span>
+		</div>
+
+		<div class="atom cs">
+			<span class="atom_text">Cs</span>
+			<span class="atom_number">55</span>
+			<span class="atom_weight">132.91</span>
+		</div>
+
+		<div class="atom ba">
+			<span class="atom_text">Ba</span>
+			<span class="atom_number">56</span>
+			<span class="atom_weight">137.33</span>
+		</div>
+
+		<div class="atom la">
+			<span class="atom_text">La</span>
+			<span class="atom_number">57</span>
+			<span class="atom_weight">138.91</span>
+		</div>
+
+		<div class="atom hf">
+			<span class="atom_text">Hf</span>
+			<span class="atom_number">72</span>
+			<span class="atom_weight">178.49</span>
+		</div>
+
+		<div class="atom ta">
+			<span class="atom_text">Ta</span>
+			<span class="atom_number">73</span>
+			<span class="atom_weight">180.95</span>
+		</div>
+
+		<div class="atom w">
+			<span class="atom_text">W</span>
+			<span class="atom_number">74</span>
+			<span class="atom_weight">183.84</span>
+		</div>
+
+		<div class="atom re">
+			<span class="atom_text">Re</span>
+			<span class="atom_number">75</span>
+			<span class="atom_weight">186.21</span>
+		</div>
+
+		<div class="atom os">
+			<span class="atom_text">Os</span>
+			<span class="atom_number">76</span>
+			<span class="atom_weight">190.23</span>
+		</div>
+
+		<div class="atom ir">
+			<span class="atom_text">Ir</span>
+			<span class="atom_number">77</span>
+			<span class="atom_weight">192.22</span>
+		</div>
+
+		<div class="atom pt">
+			<span class="atom_text">Pt</span>
+			<span class="atom_number">78</span>
+			<span class="atom_weight">195.08</span>
+		</div>
+
+		<div class="atom au">
+			<span class="atom_text">Au</span>
+			<span class="atom_number">79</span>
+			<span class="atom_weight">196.97</span>
+		</div>
+
+		<div class="atom hg">
+			<span class="atom_text">Hg</span>
+			<span class="atom_number">80</span>
+			<span class="atom_weight">200.59</span>
+		</div>
+
+		<div class="atom tl">
+			<span class="atom_text">Tl</span>
+			<span class="atom_number">81</span>
+			<span class="atom_weight">204.38</span>
+		</div>
+
+		<div class="atom pb">
+			<span class="atom_text">Pb</span>
+			<span class="atom_number">82</span>
+			<span class="atom_weight">207.2</span>
+		</div>
+
+		<div class="atom bi">
+			<span class="atom_text">Bi</span>
+			<span class="atom_number">83</span>
+			<span class="atom_weight">208.98</span>
+		</div>
+
+		<div class="atom po">
+			<span class="atom_text">Po</span>
+			<span class="atom_number">84</span>
+			<span class="atom_weight">[209]</span>
+		</div>
+
+		<div class="atom at">
+			<span class="atom_text">At</span>
+			<span class="atom_number">85</span>
+			<span class="atom_weight">[210]</span>
+		</div>
+
+		<div class="atom rn">
+			<span class="atom_text">Rn</span>
+			<span class="atom_number">86</span>
+			<span class="atom_weight">[222]</span>
+		</div>
+
+		<div class="atom fr">
+			<span class="atom_text">Fr</span>
+			<span class="atom_number">87</span>
+			<span class="atom_weight">[223]</span>
+		</div>
+
+		<div class="atom ra">
+			<span class="atom_text">Ra</span>
+			<span class="atom_number">88</span>
+			<span class="atom_weight">[226]</span>
+		</div>
+
+		<div class="atom ac">
+			<span class="atom_text">Ac</span>
+			<span class="atom_number">89</span>
+			<span class="atom_weight">[227]</span>
+		</div>
+
+		<div class="atom rf">
+			<span class="atom_text">Rf</span>
+			<span class="atom_number">104</span>
+			<span class="atom_weight">[267]</span>
+		</div>
+
+		<div class="atom db">
+			<span class="atom_text">Db</span>
+			<span class="atom_number">105</span>
+			<span class="atom_weight">[268]</span>
+		</div>
+
+		<div class="atom sg">
+			<span class="atom_text">Sg</span>
+			<span class="atom_number">106</span>
+			<span class="atom_weight">[269]</span>
+		</div>
+
+		<div class="atom bh">
+			<span class="atom_text">Bh</span>
+			<span class="atom_number">107</span>
+			<span class="atom_weight">[270]</span>
+		</div>
+
+		<div class="atom hs">
+			<span class="atom_text">Hs</span>
+			<span class="atom_number">108</span>
+			<span class="atom_weight">[270]</span>
+		</div>
+
+		<div class="atom mt">
+			<span class="atom_text">Mt</span>
+			<span class="atom_number">109</span>
+			<span class="atom_weight">[278]</span>
+		</div>
+
+		<div class="atom ds">
+			<span class="atom_text">Ds</span>
+			<span class="atom_number">110</span>
+			<span class="atom_weight">[281]</span>
+		</div>
+
+		<div class="atom rg">
+			<span class="atom_text">Rg</span>
+			<span class="atom_number">111</span>
+			<span class="atom_weight">[282]</span>
+		</div>
+
+		<div class="atom cn">
+			<span class="atom_text">Cn</span>
+			<span class="atom_number">112</span>
+			<span class="atom_weight">[285]</span>
+		</div>
+
+		<div class="atom nh">
+			<span class="atom_text">Nh</span>
+			<span class="atom_number">113</span>
+			<span class="atom_weight">[286]</span>
+		</div>
+
+		<div class="atom fl">
+			<span class="atom_text">Fl</span>
+			<span class="atom_number">114</span>
+			<span class="atom_weight">[289]</span>
+		</div>
+
+		<div class="atom mc">
+			<span class="atom_text">Mc</span>
+			<span class="atom_number">115</span>
+			<span class="atom_weight">[290]</span>
+		</div>
+
+		<div class="atom lv">
+			<span class="atom_text">Lv</span>
+			<span class="atom_number">116</span>
+			<span class="atom_weight">[293]</span>
+		</div>
+
+		<div class="atom ts">
+			<span class="atom_text">Ts</span>
+			<span class="atom_number">117</span>
+			<span class="atom_weight">[294]</span>
+		</div>
+
+		<div class="atom og">
+			<span class="atom_text">Og</span>
+			<span class="atom_number">118</span>
+			<span class="atom_weight">[294]</span>
+		</div>
+
+		<div class="atom ce">
+			<span class="atom_text">Ce</span>
+			<span class="atom_number">58</span>
+			<span class="atom_weight">140.12</span>
+		</div>
+
+		<div class="atom pr">
+			<span class="atom_text">Pr</span>
+			<span class="atom_number">59</span>
+			<span class="atom_weight">140.91</span>
+		</div>
+
+		<div class="atom nd">
+			<span class="atom_text">Nd</span>
+			<span class="atom_number">60</span>
+			<span class="atom_weight">144.24</span>
+		</div>
+
+		<div class="atom pm">
+			<span class="atom_text">Pm</span>
+			<span class="atom_number">61</span>
+			<span class="atom_weight">[145]</span>
+		</div>
+
+		<div class="atom sm">
+			<span class="atom_text">Sm</span>
+			<span class="atom_number">62</span>
+			<span class="atom_weight">150.36</span>
+		</div>
+
+		<div class="atom eu">
+			<span class="atom_text">Eu</span>
+			<span class="atom_number">63</span>
+			<span class="atom_weight">151.96</span>
+		</div>
+
+		<div class="atom gd">
+			<span class="atom_text">Gd</span>
+			<span class="atom_number">64</span>
+			<span class="atom_weight">157.25</span>
+		</div>
+
+		<div class="atom tb">
+			<span class="atom_text">Tb</span>
+			<span class="atom_number">65</span>
+			<span class="atom_weight">158.93</span>
+		</div>
+
+		<div class="atom dy">
+			<span class="atom_text">Dy</span>
+			<span class="atom_number">66</span>
+			<span class="atom_weight">162.50</span>
+		</div>
+
+		<div class="atom ho">
+			<span class="atom_text">Ho</span>
+			<span class="atom_number">67</span>
+			<span class="atom_weight">164.93</span>
+		</div>
+
+		<div class="atom er">
+			<span class="atom_text">Er</span>
+			<span class="atom_number">68</span>
+			<span class="atom_weight">167.26</span>
+		</div>
+
+		<div class="atom tm">
+			<span class="atom_text">Tm</span>
+			<span class="atom_number">69</span>
+			<span class="atom_weight">168.93</span>
+		</div>
+
+		<div class="atom yb">
+			<span class="atom_text">Yb</span>
+			<span class="atom_number">70</span>
+			<span class="atom_weight">173.05</span>
+		</div>
+
+		<div class="atom lu">
+			<span class="atom_text">Lu</span>
+			<span class="atom_number">71</span>
+			<span class="atom_weight">174.97</span>
+		</div>
+
+		<div class="atom th">
+			<span class="atom_text">Th</span>
+			<span class="atom_number">90</span>
+			<span class="atom_weight">232.04</span>
+		</div>
+
+		<div class="atom pa">
+			<span class="atom_text">Pa</span>
+			<span class="atom_number">91</span>
+			<span class="atom_weight">231.04</span>
+		</div>
+
+		<div class="atom u">
+			<span class="atom_text">U</span>
+			<span class="atom_number">92</span>
+			<span class="atom_weight">238.03</span>
+		</div>
+
+		<div class="atom np">
+			<span class="atom_text">Np</span>
+			<span class="atom_number">93</span>
+			<span class="atom_weight">[237]</span>
+		</div>
+
+		<div class="atom pu">
+			<span class="atom_text">Pu</span>
+			<span class="atom_number">94</span>
+			<span class="atom_weight">[244]</span>
+		</div>
+
+		<div class="atom am">
+			<span class="atom_text">Am</span>
+			<span class="atom_number">95</span>
+			<span class="atom_weight">[243]</span>
+		</div>
+
+		<div class="atom cm">
+			<span class="atom_text">Cm</span>
+			<span class="atom_number">96</span>
+			<span class="atom_weight">[247]</span>
+		</div>
+
+		<div class="atom bk">
+			<span class="atom_text">Bk</span>
+			<span class="atom_number">97</span>
+			<span class="atom_weight">[247]</span>
+		</div>
+
+		<div class="atom cf">
+			<span class="atom_text">Cf</span>
+			<span class="atom_number">98</span>
+			<span class="atom_weight">[251]</span>
+		</div>
+
+		<div class="atom es">
+			<span class="atom_text">Es</span>
+			<span class="atom_number">99</span>
+			<span class="atom_weight">[252]</span>
+		</div>
+
+		<div class="atom fm">
+			<span class="atom_text">Fm</span>
+			<span class="atom_number">100</span>
+			<span class="atom_weight">[257]</span>
+		</div>
+
+		<div class="atom md">
+			<span class="atom_text">Md</span>
+			<span class="atom_number">101</span>
+			<span class="atom_weight">[258]</span>
+		</div>
+
+		<div class="atom no">
+			<span class="atom_text">No</span>
+			<span class="atom_number">102</span>
+			<span class="atom_weight">[259]</span>
+		</div>
+
+		<div class="atom lr">
+			<span class="atom_text">Lr</span>
+			<span class="atom_number">103</span>
+			<span class="atom_weight">[266]</span>
+		</div>
+
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,247 @@
+body {
+	background-color: #505050;
+	width: 2000;
+}
+
+#bricks{
+	position: absolute;
+	background-image: url("resources/brick.jpg");
+	background-repeat: repeat;
+	left: 1494;
+	top: 350;
+	height: 70;
+	width: 120;
+}
+#img_day_of_the_42{
+	position: absolute;
+	left: 245;
+	top: 24;
+	height: 110;
+	width: 424;
+}
+#img_magnify_glass{
+	position: absolute;
+	left: 1369;
+	top: 25;
+}
+#img_cross{
+	position: absolute;
+	left: 1624;
+	top: 122;
+}
+#img_reload{
+	position: absolute;
+	left: 1624;
+	top: 25;
+	width: 20;
+	height: 20;
+}
+#img_arrow{
+	position: absolute;
+	left: 297;
+	top: 187;
+	width: 68;
+	height: 72;
+}
+#img_fist{
+	position: absolute;
+	left: 297;
+	top: 266;
+	width: 68;
+	height: 72;
+}
+#img_eye{
+	position: absolute;
+	left: 292;
+	top: 341;
+	width: 68;
+	height: 68;
+	border-radius: 4px;
+	border: red solid 5px;
+}
+#img_tools{
+	position: absolute;
+	left: 297;
+	top: 423;
+	width: 68;
+	height: 68;
+}
+#img_chat{
+	position: absolute;
+	left: 297;
+	top: 500;
+	width: 72;
+	height: 72;
+}
+#img_cluster{
+	position: absolute;
+	left: 445;
+	top: 182;
+	width: 1000;
+	height: 562;
+}
+#img_book{
+	position: absolute;
+	left: 1520;
+	top: 187;
+	width: 69;
+	height: 96;
+}
+#img_towel{
+	position: absolute;
+	left: 1519;
+	top: 293;
+	width: 69;
+	height: 52;
+}
+
+#top_box{
+	z-index: -1;
+	position: absolute;
+	top: 15px;
+	left: 234px;
+	width: 1420px;
+	height: 137px;
+	background-color: #909090;
+	border-radius: 10px;
+	box-shadow: 8px 10px 10px black;
+}
+#left_box{
+	z-index: -1;
+	position: absolute;
+	left: 263;
+	top: 172;
+	width: 140;
+	height: 424;
+	background-color: #909090;
+	border-radius: 10px;
+	box-shadow: 8px 10px 10px black;
+}
+#middel_box{
+	z-index: -1;
+	position: absolute;
+	left: 434;
+	top: 172;
+	width: 1020;
+	height: 582;
+	background-color: #909090;
+	border-radius: 10px;
+	box-shadow: 8px 10px 10px black;
+}
+#right_box{
+	z-index: -1;
+	position: absolute;
+	left: 1484;
+	top: 172;
+	width: 140;
+	height: 424;
+	background-color: #909090;
+	border-radius: 10px;
+	box-shadow: 8px 10px 10px black;
+}
+
+#box_with_input{
+	z-index: 1;
+	position: absolute;
+	left: 188;
+	top: 677;
+	width: 520;
+	height: 170;
+	background-color: #88ff89;
+	border-radius: 10px;
+	box-shadow: 8px 10px 10px black;
+}
+#input{
+	z-index: 2;
+	position: absolute;
+	width: 381;
+	left: 201;
+	top: 763;
+}
+#submit{
+	z-index: 2;
+	position: absolute;
+	left: 592;
+	top: 765;
+	height: 18;
+	width: 76;
+	outline: 1px solid #8f9e90;
+	border: 0px;
+}
+#text_one{
+	z-index: 20;
+	position: absolute;
+	font-family: Sans-serif;
+	font-size: 18px;
+	left: 198;
+	top: 699;
+}
+#entrez{
+	z-index: 20;
+	position: absolute;
+	font-size: 35;
+	left: 243;
+	top: 684;
+	font-family: Georgia, serif;
+}
+#text_two
+{
+	z-index: 20;
+	position: absolute;
+	font-family: Sans-serif;
+	font-size: 18px;
+	left: 347;
+	top: 699;
+}
+#text_three
+{
+	z-index: 20;
+	position: absolute;
+	font-family: Sans-serif;
+	font-size: 18px;
+	left: 199;
+	top: 722;	
+}
+#text_four
+{
+	z-index: 20;
+	position: absolute;
+	font-family: Sans-serif;
+	font-size: 18px;
+	text-shadow: 5px 6px 4px #ff0000;
+	left: 215;
+	top: 721;	
+}
+#text_five
+{
+	z-index: 20;
+	position: absolute;
+	font-family: Sans-serif;
+	font-size: 18px;
+	left: 199;
+	top: 740;	
+}
+#text_six
+{
+	z-index: 20;
+	position: absolute;
+	font-family: Sans-serif;
+	font-size: 18px;
+	left: 305;
+	top: 721;	
+}
+
+#box_ikea{
+	position: absolute;
+	top: 425;
+	left: 754;
+	width: 180;
+	height: 190;
+}
+#box_apple{
+	position: absolute;
+	top: 460;
+	left: 1242;
+	width: 180;
+	height: 190;
+}
