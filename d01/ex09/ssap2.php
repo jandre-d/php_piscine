@@ -24,7 +24,7 @@ function cmp($a, $b)
 	while ($a[$i] == $b[$i] && $a[$i] && $b[$i])
 		$i++;
 
-	if ($a[$i] && $b[$i])
+	if ($a[$i] !== 0 && $b[$i] !== 0)
 	{
 		$x = strpos($order_str, strtolower($a)[$i]);
 		$y = strpos($order_str, strtolower($b)[$i]);
