@@ -19,7 +19,7 @@ while ($line = fread($fd, 628))
 	if ($record["TerminalID"] == 0 || $record["typeoflogin"] != 7)
 		continue;
 	$time = date("M  j H:i ", $record["Timestamp"]);
-	echo $record["Username"] . " " . $record["TerminalName"] . "  " . $time . "\n";
+	echo trim($record["Username"]) . " " . trim($record["TerminalName"]) . "  " . $time . "\n";
 	print($timme);
 }
 fclose($fd);
