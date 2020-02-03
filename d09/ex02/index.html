@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<style>
+			body {
+				background-color: pink;
+			}
+			.content {
+				display: block;
+				width: 98%;
+				background-color: lightcyan;
+				margin-left: 1%;
+				margin-right: 1%;
+				margin-bottom: 5px;
+				min-height: 20px;
+				text-align: center;
+			}
+			#con-butt {
+				text-align: center;
+				padding-bottom: 10px;
+			}
+		</style>
+		<script src="todo.js"></script>
+	</head>
+	<body onload="init()">
+		<div id="con-butt">
+			<button id="butt" onclick="todo_prom()">New</button>
+		</div>
+		<div id="ft_list">
+		</div>
+	</body>
+</html>

@@ -1,0 +1,119 @@
+<html>
+	<head>
+		<style>
+			body{
+				background-color: pink;
+			}
+
+			#wrap{
+				background-color: plum;
+				margin-left: auto;
+				margin-right: auto;
+				width: 371;
+				height: 19;
+			}
+		</style>
+
+		<script>
+
+			setInterval(function(){
+       			alert("Please, use me...")}, 30000)
+
+			function err()
+			{
+				console.log("Error :(");
+				alert("Error :(");
+			}
+
+			function err_9000(res)
+			{
+				alert("It's over 9000!");
+				console.log(res);
+			}
+
+			function res(a)
+			{
+				console.log(a);
+				alert(a);
+			}
+
+			function x()
+			{
+				var left_in = document.getElementById("inA").value;
+				var right_in = document.getElementById("inB").value;
+				var left = 0;
+				var right = 0;
+
+				if (!isNaN(parseFloat(left_in)) && isFinite(left_in) &&
+					!isNaN(parseFloat(right_in)) && isFinite(right_in))
+				{
+					left = parseFloat(left_in);
+					right = parseFloat(right_in);
+				}
+				else
+				{
+					err();
+					return ;
+				}
+
+				var opx = document.getElementById("opA");
+				var op = opx.options[opx.selectedIndex].value;
+				console.log(left);
+				console.log(op);
+				console.log(right);
+
+				if (left < 0 || right < 0)
+				{
+					err();
+					return ;
+				}
+				
+				switch (op)
+				{
+					case "+":
+						res(left + right);
+					break;
+					case "-":
+						res(left - right);
+					break;
+					case "*":
+						res(left * right);
+					break;
+					case "/":
+						if (right == 0)
+							err_9000(left / right);
+						else
+							res(left / right);
+					break;
+					case "%":
+						if (right == 0)
+							err_9000(left % right);
+						else
+							res(left % right);
+					break;
+				}
+				
+			}
+		</script>
+
+	</head>
+	<body>
+		<div id="wrap">
+		
+			<input id="inA" type="text">
+
+			<select id="opA">
+				<option value="+">+</option>
+				<option value="-">-</option>
+				<option value="*">*</option>
+				<option value="/">/</option>
+				<option value="%">%</option>
+			</select>
+
+			<input id="inB" type="text">
+
+			<button onclick="x();">Try me!</button>
+				
+		</div>
+	</body>
+</html>

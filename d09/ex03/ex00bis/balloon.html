@@ -1,0 +1,99 @@
+<html>
+<head>
+	<style>
+		body{
+			background-color: pink;
+			text-align: center;
+		}
+
+		#balloon{
+			margin-left: auto;
+			margin-right: auto;
+			height: 200;
+			width: 200;
+			background-color: red;
+			border-radius: 50%;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+
+		$.fn.get_color_nbr = function()
+		{
+			switch (this.css("background-color"))
+			{
+				case 'rgb(255, 0, 0)':
+					return (0);
+				case 'rgb(0, 128, 0)':
+					return (1);
+				case 'rgb(0, 0, 255)':
+					return (2);
+			}
+			return (0);
+		}
+
+		$.fn.color_increase = function()
+		{
+			switch (this.get_color_nbr())
+			{
+				case 0:
+					this.css('background-color', 'green');
+				break;
+				case 1:
+					this.css('background-color', 'blue');
+				break;
+				case 2:
+					this.css('background-color', 'red');
+				break;
+			}
+		}
+
+		$.fn.color_decrease = function()
+		{
+			switch (this.get_color_nbr())
+			{
+				case 0:
+					this.css('background-color', 'blue');
+				break;
+				case 1:
+					this.css('background-color', 'red');
+				break;
+				case 2:
+					this.css('background-color', 'green');
+				break;
+			}
+		}
+
+		$(document).ready(function(){
+
+			$("#balloon").click(function(){
+				$("#balloon").width("+=10");
+				$("#balloon").height("+=10");
+				if ($("#balloon").width() > 420) {
+					$("#balloon").width(200)
+					$("#balloon").height(200)
+				}
+				$("#balloon").color_increase();
+			});
+
+			$("#balloon").mouseout(function(){
+				if ($("#balloon").width() > 200) {
+					$("#balloon").width("-=5");
+					$("#balloon").height("-=5");
+				}
+				$("#balloon").color_decrease();
+			})	
+
+		});
+
+	</script>
+</head>
+<body>
+
+	<div id="balloon">
+
+	</div>
+
+
+</body>
+</html>
